@@ -1,1 +1,52 @@
-<h1>老爸的私房錢</h1>
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+
+    <form action="" method="">
+      <select class="form-control" id="category" name='category'>
+        <option>類別</option>
+        <option value='home'>家居物業</option>
+        <option value='travel'>交通出行</option>
+        <option value='play'>休閒娛樂</option>
+        <option value='food'>餐飲食品</option>
+        <option value='other'>其他</option>
+      </select>
+    </form>
+
+    <div class="mt-3">
+      <div class="row justify-content-center align-items-center">
+        <div class="col" style="text-align: end;">
+          <h4>總金額：</h4>
+        </div>
+        <div class="col-8 total" id="total">
+          <h1>10,000</h1>
+        </div>
+      </div>
+    </div>
+
+    <table class="list">
+      <tbody>
+        {{!-- {{#each}} --}}
+        <tr class="list-item">
+          <td class="icon" style="font-size: 30px; color: Dodgerblue;">
+            <i class="fas fa-utensils"></i>
+          </td>
+          <td class="category-date">
+            <div class="category">午餐</div>
+            <small class="date">2021/10/10</small>
+          </td>
+          <td class="price">160</td>
+          <td><a href="/expenses/edit" class="btn btn-success edit">修改</a></td>
+          <td>
+            <form action="" method="">
+              <button type="submit" class="btn btn-danger delete">刪除</button>
+            </form>
+          </td>
+        </tr>
+        {{!-- {{/each}} --}}
+    </table>
+
+    <div class="d-flex justify-content-center mt-5">
+      <a href="/expenses/new" class="btn btn-info m-auto">新增支出</a>
+    </div>
+  </div>
+</div>
