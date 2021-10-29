@@ -4,13 +4,14 @@ const router = express.Router()
 
 
 // 總路由管理
+const { authenticator } = require('../middleware/auth')
 const home = require('./modules/home')
 const expenses = require('./modules/expenses')
 const users = require('./modules/users')
 
-router.use('/expenses', expenses)
+router.use('/expenses', authenticator, expenses)
 router.use('/users', users)
-router.use('/', home)
+router.use('/', authenticator, home)
 
 
 module.exports = router
