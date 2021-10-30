@@ -2,12 +2,12 @@
 
 
   <div class="container">
-    <form action="" method="" class="needs-validation" novalidate>
+    <form action="/records/{{record._id}}?_method=PUT" method="POST" class="needs-validation" novalidate>
       <div class="row m-3">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
           <label for="name">名稱</label>
-          <input name='name' type="text" class="form-control " id="name" value="" required>
+          <input name='name' type="text" class="form-control " id="name" value="{{record.name}}" required>
         </div>
       </div>
 
@@ -15,7 +15,7 @@
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
           <label for="date">日期</label>
-          <input name="date" type="date" class="form-control" id="date" value="" required>
+          <input name="date" type="date" class="form-control" id="date" value="{{record.date}}" required>
         </div>
       </div>
 
@@ -24,12 +24,11 @@
         <div class="col-sm-6">
           <label for="category">類別</label>
           <select class="form-control" id="category" name='category' required>
-            <option selected="selected" disabled="disabled" style='display: none' value=''></option>
-            <option value=''>家居物業</option>
-            <option value=''>交通出行</option>
-            <option value=''>休閒娛樂</option>
-            <option value=''>餐飲食品</option>
-            <option value=''>其他</option>
+            <option {{#eq record.name '家居物業' }}selected{{/eq}} value='家居物業'>家居物業</option>
+            <option {{#eq record.name '交通出行' }}selected{{/eq}} value='交通出行'>交通出行</option>
+            <option {{#eq record.name '休閒娛樂' }}selected{{/eq}} value='休閒娛樂'>休閒娛樂</option>
+            <option {{#eq record.name '餐飲食品' }}selected{{/eq}} value='餐飲食品'>餐飲食品</option>
+            <option {{#eq record.name '其他' }}selected{{/eq}} value='其他'>其他</option>
           </select>
         </div>
       </div>
@@ -37,8 +36,9 @@
       <div class="row m-3">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
-          <label for="price">金額</label>
-          <input name="price" type="number" min='0' class="form-control" id="price" value="" required>
+          <label for="amount">金額</label>
+          <input name="amount" type="number" min='0' class="form-control" id="amount" value="{{record.amount}}"
+            required>
         </div>
       </div>
 
