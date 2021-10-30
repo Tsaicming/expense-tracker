@@ -1,14 +1,14 @@
 <div class="row mt-5">
   <div class="col-md-6 m-auto">
 
-    <form action="" method="">
-      <select class="form-control" id="category" name='category'>
-        <option>類別</option>
-        <option value='home'>家居物業</option>
-        <option value='travel'>交通出行</option>
-        <option value='play'>休閒娛樂</option>
-        <option value='food'>餐飲食品</option>
-        <option value='other'>其他</option>
+    <form action="/filter" method="GET">
+      <select class="form-control" id="category" name='category' onchange="this-form.submit()">
+        <option value=''>類別</option>
+        <option {{#eq category '家居物業' }}selected{{/eq}} value='家居物業'>家居物業</option>
+        <option {{#eq category '交通出行' }}selected{{/eq}} value='交通出行'>交通出行</option>
+        <option {{#eq category '休閒娛樂' }}selected{{/eq}} value='休閒娛樂'>休閒娛樂</option>
+        <option {{#eq category '餐飲食品' }}selected{{/eq}} value='餐飲食品'>餐飲食品</option>
+        <option {{#eq category '其他' }}selected{{/eq}} value='其他'>其他</option>
       </select>
     </form>
 
@@ -17,36 +17,46 @@
         <div class="col" style="text-align: end;">
           <h4>總金額：</h4>
         </div>
-        <div class="col-8 total" id="total">
-          <h1>10,000</h1>
+        <div class="col-8 total" id="total" name="total">
+          {{!-- <h1>10,000</h1> --}}
+          <h1>{{totalAmount}}</h1>
         </div>
       </div>
     </div>
 
     <table class="list">
       <tbody>
-        {{!-- {{#each}} --}}
+        {{#each record}}
         <tr class="list-item">
           <td class="icon" style="font-size: 30px; color: Dodgerblue;">
-            <i class="fas fa-utensils"></i>
+            {{!-- <i class="fas fa-utensils"></i> --}}
+            <i class="{{this.icon}}"></i>
           </td>
+
           <td class="category-date">
-            <div class="category">午餐</div>
-            <small class="date">2021/10/10</small>
+            {{!-- <div class="category">午餐</div>
+            <small class="date">2021/10/10</small> --}}
+            <div class="category">{{this.name}}</div>
+            <small class="date">{{this.date}}</small>
           </td>
-          <td class="price">160</td>
-          <td><a href="/expenses/edit" class="btn btn-success edit">修改</a></td>
+
+          {{!-- <td class="amount">160</td> --}}
+          <td class="amount">{{this.amount}}</td>
+
+          <td><a href="/records/{{this._id}}/edit" class="btn btn-success edit">修改</a></td>
+
           <td>
             <form action="" method="">
               <button type="submit" class="btn btn-danger delete">刪除</button>
             </form>
           </td>
         </tr>
-        {{!-- {{/each}} --}}
+        {{/each}}
+      </tbody>
     </table>
 
     <div class="d-flex justify-content-center mt-5">
-      <a href="/expenses/new" class="btn btn-info m-auto">新增支出</a>
+      <a href="/records/new" class="btn btn-info m-auto">新增支出</a>
     </div>
   </div>
 </div>

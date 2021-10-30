@@ -6,10 +6,10 @@ const router = express.Router()
 // 總路由管理
 const { authenticator } = require('../middleware/auth')
 const home = require('./modules/home')
-const expenses = require('./modules/expenses')
+const records = require('./modules/records')
 const users = require('./modules/users')
 
-router.use('/expenses', authenticator, expenses)
+router.use('/records', authenticator, records)
 router.use('/users', users)
 router.use('/', authenticator, home)
 
