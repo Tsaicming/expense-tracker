@@ -64,4 +64,18 @@ router.put('/:id', (req, res) => {
 })
 
 
+router.delete('/:id', (req, res) => {
+  const userId = req.user._id
+  const _id = req.params.id
+  Record
+    .findOne({ _id, userId })
+    .then(record => record.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.log('error'))
+  // Record.findByIdAndDelete({ _id, userId })
+  //   .then(() => res.redirect('/'))
+  //   .catch(error => console.log('error'))
+})
+
+
 module.exports = router

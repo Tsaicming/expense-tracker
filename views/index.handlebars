@@ -46,7 +46,7 @@
           <td><a href="/records/{{this._id}}/edit" class="btn btn-success edit">修改</a></td>
 
           <td>
-            <form action="" method="">
+            <form action="/records/{{this._id}}?_method=DELETE" method="POST">
               <button type="submit" class="btn btn-danger delete">刪除</button>
             </form>
           </td>
