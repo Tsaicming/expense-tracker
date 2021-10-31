@@ -1,0 +1,82 @@
+{
+  "results": [
+    {
+      "name": "早餐",
+      "date": "2021-10-10",
+      "amount": "90",
+      "category": "餐飲食品"
+    },
+    {
+      "name": "下午茶",
+      "date": "2021-10-10",
+      "amount": "120",
+      "category": "餐飲食品"
+    },
+    {
+      "name": "晚餐",
+      "date": "2021-10-11",
+      "amount": "150",
+      "category": "餐飲食品"
+    },
+    {
+      "name": "買新椅子",
+      "date": "2021-10-09",
+      "amount": "500",
+      "category": "家居物業"
+    },
+    {
+      "name": "繳管理費",
+      "date": "2021-10-05",
+      "amount": "2000",
+      "category": "家居物業"
+    },
+    {
+      "name": "坐公車",
+      "date": "2021-10-11",
+      "amount": "12",
+      "category": "交通出行"
+    },
+    {
+      "name": "計程車費",
+      "date": "2021-10-15",
+      "amount": "376",
+      "category": "交通出行"
+    },
+    {
+      "name": "捷運",
+      "date": "2021-10-17",
+      "amount": "50",
+      "category": "交通出行"
+    },
+    {
+      "name": "看電影",
+      "date": "2021-10-15",
+      "amount": "230",
+      "category": "休閒娛樂"
+    },
+    {
+      "name": "KTV",
+      "date": "2021-10-07",
+      "amount": "465",
+      "category": "休閒娛樂"
+    },
+    {
+      "name": "繳罰單",
+      "date": "2021-10-22",
+      "amount": "4600",
+      "category": "其他"
+    },
+    {
+      "name": "捐款",
+      "date": "2021-10-30",
+      "amount": "10000",
+      "category": "其他"
+    },
+    {
+      "name": "看病",
+      "date": "2021-10-24",
+      "amount": "655",
+      "category": "其他"
+    }
+  ]
+}

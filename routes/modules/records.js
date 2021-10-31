@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
       const categoryId = cate._id
       const icon = cate.icon
       Record.create({
-        name, date, amount, userId, categoryId, icon
+        name, date, amount, userId, categoryId, category, icon
       })
         .then(() => res.redirect('/'))
     })
@@ -51,11 +51,12 @@ router.put('/:id', (req, res) => {
       Record
         .findOne({ _id, userId })
         .then(record => {
-          record.name = name,
-            record.date = date,
-            record.amount = amount,
-            record.categoryId = categoryId,
-            record.icon = icon
+          record.name = name
+          record.date = date
+          record.amount = amount
+          record.categoryId = categoryId
+          record.category = category
+          record.icon = icon
           return record.save()
         })
     })

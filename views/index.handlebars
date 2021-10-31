@@ -3,7 +3,7 @@
 
     <form action="/filter" method="GET">
       <select class="form-control" id="category" name='category' onchange="this-form.submit()">
-        <option value=''>類別</option>
+        <option value=''>不分支出類別</option>
         <option {{#eq category '家居物業' }}selected{{/eq}} value='家居物業'>家居物業</option>
         <option {{#eq category '交通出行' }}selected{{/eq}} value='交通出行'>交通出行</option>
         <option {{#eq category '休閒娛樂' }}selected{{/eq}} value='休閒娛樂'>休閒娛樂</option>
