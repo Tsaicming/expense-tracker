@@ -72,9 +72,6 @@ router.delete('/:id', (req, res) => {
     .then(record => record.remove())
     .then(() => res.redirect('/'))
     .catch(error => console.log('error'))
-  // Record.findByIdAndDelete({ _id, userId })
-  //   .then(() => res.redirect('/'))
-  //   .catch(error => console.log('error'))
 })
 
 
